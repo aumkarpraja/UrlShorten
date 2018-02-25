@@ -1,0 +1,28 @@
+body{
+    background-color: #5a6570;
+    margin-top: 60px;
+}
+
+div.main{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-color: #343a40;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+#output{
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+label{
+    color: white;
+}
+
+form button{
+    margin-top: 13px;
+}

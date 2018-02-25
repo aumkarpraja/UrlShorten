@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'urlshort/css/main.css' %}" />
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">URLShorten</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/stats/">Stats <span class="sr-only"></span></a>
+            </li>
+        </ul>
+      </nav>
+    
+    <!-- Main input/output area -->
+    <div class="main">
+        <form method="POST" action="/shorten/"> 
+            {% csrf_token %}
+            <label>Enter a valid URL below to shorten</label>
+            <input type="text" name="url" id="url" class="form-control input-sm" placeholder="http://www.google.ca" />
+            <button id="submitButton" class="btn btn-primary">Submit</button>
+        </form>
+        <p id="output">{{output}}</p>
+    </div>
+</body>
+</html>
