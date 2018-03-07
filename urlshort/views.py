@@ -44,7 +44,7 @@ def shorten(request):
         # We need to provide a response of some type after it's shortened, obviously
         # we want to give the user back a shortened URL so...
         response_data = {}
-        output = "http://localhost:8000" + "/" + short_id # putting together the shortened URL
+        output = "https://aumkar-urlshorten.herokuapp.com" + "/" + short_id # putting together the shortened URL
         return render(request, 'index.html', {'output':output })
     # If we've reached this return state, obviously the URL was incorrect or something else is going on our end
     return render(request, 'index.html', {'output':"Some error occured." })
